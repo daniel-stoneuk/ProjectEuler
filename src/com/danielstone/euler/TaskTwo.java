@@ -1,7 +1,5 @@
 package com.danielstone.euler;
 
-import java.util.concurrent.TimeUnit;
-
 public class TaskTwo {
     public static void main(String[] args) {
 
@@ -10,9 +8,7 @@ public class TaskTwo {
         int previousTwo = 0;
         int previousOne = 1;
         int current = 0;
-
         int sum = 0;
-
         while ( current < 4000000 ){
             current =+ previousOne + previousTwo;
             if (current < 4000000) {

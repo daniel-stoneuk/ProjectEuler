@@ -1,7 +1,5 @@
 package com.danielstone.euler;
 
-import java.lang.reflect.Array;
-import java.math.MathContext;
 import java.util.ArrayList;
 
 /**
@@ -16,18 +14,14 @@ public class TaskThree {
         long largestPrimeFactor = 0;
         long numberToFactor = 600851475143l;
 
-        ArrayList<Integer> factors = new ArrayList<>();
-
         boolean running = true;
 
         while (running) {
-            int primeListSize = (int) Math.ceil(Math.sqrt(numberToFactor));
-            System.out.println(primeListSize);
-            ArrayList<Integer> arrayListOfPrimes = isPrime(primeListSize);
+            int upToPrimes = (int) Math.ceil(Math.sqrt(numberToFactor));
+            ArrayList<Integer> arrayListOfPrimes = primesUpTo(upToPrimes);
 
             for (Integer primeToTest : arrayListOfPrimes) {
                 if (numberToFactor % primeToTest == 0) {
-                    factors.add(primeToTest);
                     if (primeToTest >= largestPrimeFactor) {
                         largestPrimeFactor = primeToTest;
                     }
@@ -45,7 +39,7 @@ public class TaskThree {
     }
 
 
-    public static ArrayList<Integer> isPrime(int l) {
+    public static ArrayList<Integer> primesUpTo(int l) {
 
         ArrayList<Integer> array = new ArrayList<>();
 
@@ -53,7 +47,6 @@ public class TaskThree {
         for (int b = 2; b < booleanArray.length; b++) {
             booleanArray[b] = true;
         }
-
         for (int i = 2; i < Math.sqrt(l); i++) {
             if (booleanArray[i]) {
                 for (int j = (i*i); j < l; j = j + i) {
@@ -61,14 +54,11 @@ public class TaskThree {
                 }
             }
         }
-
-
         for (int b = 0; b < booleanArray.length; b++) {
             if (booleanArray[b]) {
                 array.add(b);
             }
         }
-
         return array;
     }
 }

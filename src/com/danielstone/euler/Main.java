@@ -23,8 +23,9 @@ public class Main {
         for (int i = 0; i < array.size(); i++) {
             sum = sum + array.get(i);
         }
+        System.out.println("" + sum);
 
-        System.out.print("" + sum);
+
         final long duration = System.nanoTime() - startTime;
         final double milliseconds = duration / 1000000.0;
         System.out.println(duration + " ns " + milliseconds + "ms");
