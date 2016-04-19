@@ -13,8 +13,8 @@ public class TaskThree {
 
         final long startTime = System.nanoTime();
 
-        long numberToFactor = 600851475143l;
         long largestPrimeFactor = 0;
+        long numberToFactor = 600851475143l;
 
         ArrayList<Integer> factors = new ArrayList<>();
 
