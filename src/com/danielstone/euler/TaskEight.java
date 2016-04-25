@@ -1,8 +1,5 @@
 package com.danielstone.euler;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 /**
  * Created by user on 21/04/2016.
  */
@@ -32,12 +29,12 @@ public class TaskEight {
                 "71636269561882670428252483600823257530420752963450";
 
 
-        int highestProduct = 0;
+        long highestProduct = 0;
         String highestProductString = "";
 
         for (int i = 0; i < the1000DigitNumber.length() - 13; i++) {
-            int current = Integer.parseInt(the1000DigitNumber.charAt(i) + "");
-            int currentProduct = current;
+            long current = Integer.parseInt(the1000DigitNumber.charAt(i) + "");
+            long currentProduct = current;
             String currentProductString = "" + current;
             for (int j = 1; j < 13; j++) {
                 int currentIndex = i + j;

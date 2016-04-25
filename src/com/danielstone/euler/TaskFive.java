@@ -1,7 +1,5 @@
 package com.danielstone.euler;
 
-import sun.rmi.runtime.Log;
-
 /**
  * Created by user on 21/04/2016.
  */
@@ -14,7 +12,6 @@ public class TaskFive {
 
         /*
         Notes:
-
         needs to be a multiple of 5
          */
 

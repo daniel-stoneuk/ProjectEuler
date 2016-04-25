@@ -14,8 +14,13 @@ public class TaskSeven {
         // 2.990301ms VM
 
         int primeToGet =  10000;
-        ArrayList<Integer> arrayList = primesUpTo(150000);
-        System.out.println(arrayList.size() + " primes calculated. We need " + primeToGet);
+        int upTo = 150000;
+        ArrayList<Integer> arrayList;
+        do {
+            arrayList = primesUpTo(upTo);
+            System.out.println(arrayList.size() + " primes calculated. We need " + primeToGet);
+            upTo = upTo + 25000;
+        } while (arrayList.size() < primeToGet);
         System.out.println(arrayList.get(primeToGet));
 
         final long duration = System.nanoTime() - startTime;
