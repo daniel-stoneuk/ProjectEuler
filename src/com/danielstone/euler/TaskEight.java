@@ -40,10 +40,10 @@ public class TaskEight {
                 int currentIndex = i + j;
                 currentProduct = currentProduct * Integer.parseInt(the1000DigitNumber.charAt(currentIndex) + "");
                 currentProductString += " * " + Integer.parseInt(the1000DigitNumber.charAt(currentIndex) + "");
-                if (currentProduct > highestProduct) {
-                    highestProduct = currentProduct;
-                    highestProductString = currentProductString;
-                }
+            }
+            if (currentProduct > highestProduct) {
+                highestProduct = currentProduct;
+                highestProductString = currentProductString;
             }
         }
 
