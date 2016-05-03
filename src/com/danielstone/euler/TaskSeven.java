@@ -7,7 +7,6 @@ import java.util.Arrays;
  * Created by user on 21/04/2016.
  */
 public class TaskSeven {
-
     public static void main(String[] args) {
         final long startTime = System.nanoTime();
 
