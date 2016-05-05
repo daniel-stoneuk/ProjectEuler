@@ -32,11 +32,9 @@ public class TaskEleven {
                 "01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48";
 
         int rowSize = 20;
-        int index = 0;
-        int rowIndex = 0;
         int greatestProduct = 0;
-        for (rowIndex = 0; rowIndex < rowSize; rowIndex++) {
-            for (index = 0; index < rowSize; index++) {
+        for (int rowIndex = 0; rowIndex < rowSize; rowIndex++) {
+            for (int index = 0; index < rowSize; index++) {
                 int current = getMaxProductAtIndexInRow(grid, index, rowIndex, rowSize);
                 if (current > greatestProduct) greatestProduct = current;
             }
@@ -64,6 +62,7 @@ public class TaskEleven {
         int leftDiagonalSum = leftDiagonalSum(grid, index, rowIndex, rowSize);
         int rightDiagonalSum = rightDiagonalSum(grid, index, rowIndex, rowSize);
         int upSum = upSum(grid, index, rowIndex, rowSize);
+
         if (leftSum > result) result = leftSum;
         if (rightSum > result) result = rightSum;
         if (leftDiagonalSum > result) result = leftDiagonalSum;
