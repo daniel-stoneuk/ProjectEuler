@@ -55,8 +55,11 @@ public class TaskEleven {
 
     private static int getNumberAtIndexInRow(String grid, int index, int rowIndex, int rowSize) {
         int result = 0;
+        //get the value at the index by getting the index of the first character
         int subStart = rowIndex * (rowSize * 3) + (index * 3);
+        // add two to get the last character
         int subEnd = subStart + 2;
+        //Substring to get the res
         result = Integer.parseInt(grid.substring(subStart, subEnd));
         return result;
     }
@@ -90,7 +93,7 @@ public class TaskEleven {
         //get the number of the index in the row
         int product = getNumberAtIndexInRow(grid, index, rowIndex, rowSize);
         for (int i = 1; i < 4; i++) {
-            // for the four numbers, multiply the product by
+            // for the four numbers, multiply the product by the value
             if (index - i <= 0 || rowIndex - i <= 0) return -1;
             product = product * getNumberAtIndexInRow(grid, index - i, rowIndex - i, rowSize);
         }
