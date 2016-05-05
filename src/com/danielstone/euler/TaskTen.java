@@ -13,7 +13,7 @@ public class TaskTen {
 
         long sum = 0;
         int upToPrimes = (int) Math.ceil(Math.sqrt(199999L));
-        ArrayList<Integer> arrayListOfPrimes = primesUpTo(1415);
+        ArrayList<Integer> arrayListOfPrimes = primesUpTo(upToPrimes);
 
         for (Integer i:
              arrayListOfPrimes) {

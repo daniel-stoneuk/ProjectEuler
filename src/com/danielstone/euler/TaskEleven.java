@@ -9,7 +9,7 @@ public class TaskEleven {
 
         final long startTime = System.nanoTime();
 
-
+        // the grid of numbers from the projecteuler.net. As a string with no line breaks
         String grid = "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08 " +
                 "49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00 " +
                 "81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65 " +
@@ -31,10 +31,16 @@ public class TaskEleven {
                 "20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54 " +
                 "01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48";
 
+        // Set the size of the grid so it will work with any grid String
         int rowSize = 20;
+        // initialise the greatest product
         int greatestProduct = 0;
+
+        // for every row (rowIndex) up to 20 (rowSize)
         for (int rowIndex = 0; rowIndex < rowSize; rowIndex++) {
+            // check every number in the row. each two digit number has a different index
             for (int index = 0; index < rowSize; index++) {
+                // invoke method to get the largest product, up, down, diagonally, left or right for each number.
                 int current = getMaxProductAtIndexInRow(grid, index, rowIndex, rowSize);
                 if (current > greatestProduct) greatestProduct = current;
             }
@@ -55,6 +61,14 @@ public class TaskEleven {
         return result;
     }
 
+    /**
+     * Gets the largest product at index in row, using many other methods.
+     * @param grid grid string
+     * @param index index of number in row
+     * @param rowIndex index of row
+     * @param rowSize length of row
+     * @return largest product
+     */
     private static int getMaxProductAtIndexInRow(String grid, int index, int rowIndex, int rowSize) {
         int result = 0;
         int leftSum = leftSum(grid, index, rowIndex, rowSize);
@@ -71,9 +85,12 @@ public class TaskEleven {
         return result;
     }
 
+
     private static int leftDiagonalSum(String grid, int index, int rowIndex, int rowSize) {
+        //get the number of the index in the row
         int product = getNumberAtIndexInRow(grid, index, rowIndex, rowSize);
         for (int i = 1; i < 4; i++) {
+            // for the four numbers, multiply the product by
             if (index - i <= 0 || rowIndex - i <= 0) return -1;
             product = product * getNumberAtIndexInRow(grid, index - i, rowIndex - i, rowSize);
         }

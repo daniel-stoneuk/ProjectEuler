@@ -30,24 +30,19 @@ public class TaskEight {
 
 
         long highestProduct = 0;
-        String highestProductString = "";
 
         for (int i = 0; i < the1000DigitNumber.length() - 13; i++) {
             long current = Integer.parseInt(the1000DigitNumber.charAt(i) + "");
             long currentProduct = current;
-            String currentProductString = "" + current;
             for (int j = 1; j < 13; j++) {
                 int currentIndex = i + j;
                 currentProduct = currentProduct * Integer.parseInt(the1000DigitNumber.charAt(currentIndex) + "");
-                currentProductString += " * " + Integer.parseInt(the1000DigitNumber.charAt(currentIndex) + "");
             }
             if (currentProduct > highestProduct) {
                 highestProduct = currentProduct;
-                highestProductString = currentProductString;
             }
         }
 
-        System.out.println("highestProductString = " + highestProductString);
         System.out.println("highestProduct = " + highestProduct);
 
         final long duration = System.nanoTime() - startTime;
