@@ -12,15 +12,14 @@ public class TaskTen {
         final long startTime = System.nanoTime();
 
         long sum = 0;
-        int upToPrimes = (int) Math.ceil(Math.sqrt(199999L));
-        ArrayList<Integer> arrayListOfPrimes = primesUpTo(upToPrimes);
+        ArrayList<Integer> arrayListOfPrimes = primesUpTo(2000000);
 
         for (Integer i:
              arrayListOfPrimes) {
             sum = sum + i;
         }
 
-        System.out.println("sum = " + sum);
+        System.out.println("\nsum = " + sum);
         final long duration = System.nanoTime() - startTime;
         double milliseconds = duration / 1000000.0;
         System.out.println("\n\n" + duration + " ns " + milliseconds + "ms");
@@ -39,6 +38,9 @@ public class TaskTen {
                 }
             }
         }
+
+        booleanArray[1] = false; // one is not a prime number
+
         for (int b = 0; b < booleanArray.length; b++) {
             if (booleanArray[b]) {
                 array.add(b);

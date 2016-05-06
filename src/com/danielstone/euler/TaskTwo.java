@@ -15,6 +15,7 @@ public class TaskTwo {
                 previousTwo = previousOne;
                 previousOne = current;
                 if (current % 2 == 0)
+                if ((current & 1) == 0)
                     sum += current;
             }
         }
