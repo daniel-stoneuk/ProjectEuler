@@ -19,7 +19,6 @@ public class TaskFourteen {
                 testing = applyRule(testing);
                 chain ++;
             }
-            System.out.println(i + " " +  chain);
             if (chain > largestChain) {
                 largestStart = i;
                 largestChain = chain;
